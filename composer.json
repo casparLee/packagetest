@@ -1,0 +1,22 @@
+{
+    "name": "caspar-lee/gksalesdemo",
+    "authors": [
+        {
+            "name": "caspar",
+            "email": "381244953@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Caspar\\Packagetest\\": "src/"
+        }
+    },
+    "require": {
+
+    },
+    "minimum-stability": "dev",
+    "require-dev":{
+        "caspar-lee/gksalesdemo":"^1.0"
+    }
+}
+
