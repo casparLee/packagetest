@@ -28,7 +28,7 @@ class TuanController extends Controller
 
     public function kjinfo($id)
     {
-
+        //砍价商品详情
           $item=Packagetest::bargaindetail($id);
 
           $goods=$item['goods'];
@@ -39,13 +39,14 @@ class TuanController extends Controller
 
     public function kjlist($uid)
     {
-
+        //砍价商品列表
           $posts = Packagetest::listBargain($uid);
 
         return view('kanjialist', compact( 'posts'));
     }
 
     public function huodonglist(){
+        //商家活动列表
         $uid=123;
         $res=Packagetest::huodonglist($uid);
         $tuanlist=$res['tuan'];
@@ -54,6 +55,7 @@ class TuanController extends Controller
     }
 
     public function kjaddview(){
+        //砍价新增视图页面
         $uid=123;
         $goods=Packagetest::goods($uid);
 
@@ -83,7 +85,9 @@ class TuanController extends Controller
 
     public function kjedit(Request $request)
     {
-        /*测试demo 调用砍价活动控制器*/
+        /*
+        *编辑砍价 
+        *测试demo 调用砍价活动控制器*/
         $data = [];
         $data['bargain_id'] = $request->bargain_id;//业务ID
         $data['user_id'] = $request->user_id;
@@ -99,23 +103,27 @@ class TuanController extends Controller
 
     public function tuandel($id)
     {
+        //下架团购活动
        return Packagetest::actityDEL(1, $id,0);
     }
     public function tuanup($id)
     {
+        //上架团购活动
         return  Packagetest::actityDEL(1, $id,1);
     }
     public function kanjiadel($id)
     {
+        //下架砍价活动
         return  Packagetest::actityDEL(3, $id,0);
     }
     public function kanjiaup($id)
     {
+        //上架砍价活动
         return   Packagetest::actityDEL(3, $id,1);
     }
     public function test(Request $request)
     {
-
+        //活动商品测试用例
         $a = Packagetest::goods_rtn(3, 13);
         $goodsinfo = $a['goodsinfo'];
         $tuan = $a['tuan'];
@@ -141,9 +149,10 @@ class TuanController extends Controller
         return view('tuan', compact('goodsinfo', 'tuan', 'user'));
     }
 
-
+      //新增团购活动  
     public function addTuan(Request $request)
     {
+        
         $goods_name=Packagetest::godoscloum($request->good_id, ['name']);
 
         $data['good_id'] = $request->good_id;
@@ -160,6 +169,7 @@ class TuanController extends Controller
         return Packagetest::addTuan($data);
     }
 
+    //接收团购活动post 数据 管够新增API
     public function postTuan(Request $request)
     {
 
