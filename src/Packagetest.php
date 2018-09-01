@@ -171,21 +171,13 @@ class Packagetest
             if ($tuan['store'] <= 0) {
                 common::ajaxReturn('0', '已经满员，等待下次机会吧！');
             }
-            // 重新计算价格
-            $price = $old_price = $tuan->price;
-            $prices = $price * $num;
 
-            // 创建订单
-            $order = [ 'user_id' => $userid, 'yhq_id' => 0, 'yh_price' => 0,
-                'old_prices' => $old_price, 'total_prices' => $prices, 'create_ip' => '127.0.0.1',
-                'address_id' => 0, 'ziti' => 0, 'area' => '', 'mark' => '', 'prom_type' => 2,
-                'sales_id' => $tid, 'display' => 0];
             $tuanUser=['user_id'=>$userid,'t_id'=>$tid,'status'=>1];
 
         try {
             //数据写入、更改团购人数
             $resTUSER = TuanUser::create($tuanUser);
-            $order = SalesOrder::create($order);
+
             Tuan::where('tid', $tid)
                 ->update(['buy_num' => $tuan['buy_num']+1]);
             //当前团购人数已满 开团中
@@ -195,7 +187,7 @@ class Packagetest
             }
 
             DB::commit();
-            common::ajaxReturn('1', $order.'|'.$resTUSER);
+          return ['tuan'=>$tuan,'resTUSER'=>$resTUSER];
 
         } catch (\Throwable $e) {
             // 出错回滚
