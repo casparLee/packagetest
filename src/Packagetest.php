@@ -107,7 +107,7 @@ class Packagetest
 
     /**
      * @param string $msg
-     * @return string 团购详情
+     * @return string 团购商品详情
      */
     public function goods_rtn($tid = 0, $gid = 0)
     {
@@ -123,7 +123,9 @@ class Packagetest
         return $resData;
     }
 
-
+        /*
+         * 新增团购活动
+         * */
     public function addTuan(array $data){
         // 事务
         DB::beginTransaction();
@@ -137,7 +139,10 @@ class Packagetest
             common::ajaxReturn('0', $e->getMessage());
         }
     }
-
+    
+    /*
+         * 团购下单
+         * */
     public function postTuan(array $data)
     {
 
@@ -195,7 +200,10 @@ class Packagetest
             common::ajaxReturn('0', $e->getMessage());
         }
     }
-
+    
+        /*
+         * 取消团购
+         * */
     public function backTuan($oid)
     {
         /* caspar2018/08/28
