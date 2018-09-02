@@ -73,6 +73,8 @@ class TuanController extends Controller
         $data['uid'] = $request->uid;
         $data['gp'] = $request->gp;
         $datalist= Packagetest::postTuan($data);
+        // 事务
+        DB::beginTransaction();
         try {
             // 重新计算价格
             $price = $old_price = $datalist['tuan']->price;
