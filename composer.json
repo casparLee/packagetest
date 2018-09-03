@@ -12,7 +12,6 @@
         }
     },
     "require": {
-        "moonamiamj/Packagetest": "1.0.*"
-    }
+     }
 }
 
