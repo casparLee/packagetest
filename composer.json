@@ -1,5 +1,5 @@
 {
-    "name": "caspar-lee/gksalesdemo",
+    "name": "casparlee/gksalesdemo",
     "authors": [
         {
             "name": "caspar",
@@ -11,12 +11,7 @@
             "Caspar\\Packagetest\\": "src/"
         }
     },
-    "require": {
-
-    },
-    "minimum-stability": "dev",
-    "require-dev":{
-        "caspar-lee/gksalesdemo":"^1.0"
-    }
+    "require": {},
+    "minimum-stability": "dev"
 }
 
