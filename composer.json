@@ -1,5 +1,5 @@
 {
-    "name": "casparlee/gksalesdemo",
+    "name": "moonaJG/packagetest",
     "authors": [
         {
             "name": "caspar",
@@ -8,10 +8,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Caspar\\Packagetest\\": "src/"
+            "moonajg\\Packagetest\\": "src/"
         }
     },
-    "require": {},
-    "minimum-stability": "dev"
+    "require": {
+        "moonajg/Packagetest": "1.0.*"
+    }
 }
 
