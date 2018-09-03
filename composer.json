@@ -1,18 +1,18 @@
 {
-    "name": "moonaJG/packagetest",
+    "name": "moonamiamj/packagetest",
     "authors": [
         {
-            "name": "caspar",
+            "name": "moonamiamj",
             "email": "381244953@qq.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "moonajg\\Packagetest\\": "src/"
+            "moonamiamj\\Packagetest\\": "src/"
         }
     },
     "require": {
-        "moonajg/Packagetest": "1.0.*"
+        "moonamiamj/Packagetest": "1.0.*"
     }
 }
 
