@@ -7,6 +7,6 @@ class Packagetest extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'packagetest';
+        return 'Caspar\Packagetest\Packagetest';
     }
 }
