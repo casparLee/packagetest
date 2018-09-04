@@ -38,7 +38,7 @@ $app->register(Caspar\Packagetest\PackagetestServiceProvider::class);
   "App\\": "app/",
   "Caspar\\Packagetest\\": "vendor/moonamiamj/packagetest/src/"
  在执行命令：
-  composer clear-cache
+  composer clear-cache 和
  composer dump-autoload
 
  
