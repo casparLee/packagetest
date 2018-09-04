@@ -11,6 +11,7 @@
             "moonamiamj\\Packagetest\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "require": {
      }
 }
