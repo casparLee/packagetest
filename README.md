@@ -1,4 +1,16 @@
 #packagetest
+##lumen 使用
+
+composer require --prefer-dist  moonamiamj/packagetest
+composer dump-autoload
+
+$app->register(Caspar\Packagetest\PackagetestServiceProvider::class);
+class_alias('Caspar\Packagetest\Facades\Packagetest', 'Packagetest');//添加门脸类别名
+ php artisan migrate
+ 
+ $router->get('test', 'Controller@test');
+ ---------------------------------------------------------------------
+
 1、在vendor目录中新增caspar目录;
 2、caspar目录下 执行
 > git clone https://github.com/casparLee/packagetest.git
