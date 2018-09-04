@@ -6,9 +6,14 @@
             "email": "381244953@qq.com"
         }
     ],
-    "autoload": {
+     "autoload": {
         "psr-4": {
-            "moonamiamj\\Packagetest\\": "src/"
+            "Caspar\\Packagetest\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Caspar\\Packagetest\\Test\\": "tests/"
         }
     },
     "minimum-stability": "dev",
