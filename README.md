@@ -12,12 +12,7 @@
 }
 并添加 repositories 镜像源
 
-"repositories": {
-    "tencent-im": {
-        "type": "vcs",
-        "url": "https://github.com/EddieLau0402/Tencent.git"
-    }
-},
+
 
 "repositories": {
 "packagetest-dev": {
